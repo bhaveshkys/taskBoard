@@ -17,15 +17,28 @@ class DataStore {
   private tasks: Task[] = [];
 
   constructor() {
-    this.dataPath = path.join(process.cwd(), 'data', 'database.json');
+    // Use /tmp directory in production (Vercel), local data directory in development
+    if (process.env.NODE_ENV === 'production') {
+      this.dataPath = '/tmp/database.json';
+    } else {
+      this.dataPath = path.join(process.cwd(), 'data', 'database.json');
+    }
     this.ensureDataDirectory();
     this.loadData();
   }
 
   private ensureDataDirectory(): void {
-    const dataDir = path.dirname(this.dataPath);
-    if (!fs.existsSync(dataDir)) {
-      fs.mkdirSync(dataDir, { recursive: true });
+    try {
+      const dataDir = path.dirname(this.dataPath);
+      if (!fs.existsSync(dataDir)) {
+        fs.mkdirSync(dataDir, { recursive: true });
+      }
+    } catch (error) {
+      console.error('Error creating data directory:', error);
+      // In production, if we can't create the directory, we'll work with in-memory data only
+      if (process.env.NODE_ENV === 'production') {
+        console.warn('Working with in-memory data only. Data will not persist between deployments.');
+      }
     }
   }
 
@@ -37,14 +50,25 @@ class DataStore {
         this.users = parsedData.users || [];
         this.boards = parsedData.boards || [];
         this.tasks = parsedData.tasks || [];
+      } else {
+        // Initialize with default data if file doesn't exist
+        this.initializeDefaultData();
       }
     } catch (error) {
       console.error('Error loading data:', error);
-      // Initialize with empty arrays if file is corrupted
-      this.users = [];
-      this.boards = [];
-      this.tasks = [];
+      // Initialize with default data if file is corrupted or doesn't exist
+      this.initializeDefaultData();
     }
+  }
+
+  private initializeDefaultData(): void {
+    // Initialize with empty arrays
+    this.users = [];
+    this.boards = [];
+    this.tasks = [];
+    
+    // Try to save initial data
+    this.saveData();
   }
 
   private saveData(): void {
@@ -57,6 +81,10 @@ class DataStore {
       fs.writeFileSync(this.dataPath, JSON.stringify(data, null, 2));
     } catch (error) {
       console.error('Error saving data:', error);
+      // In production, if we can't save to file, continue with in-memory data
+      if (process.env.NODE_ENV === 'production') {
+        console.warn('Unable to persist data to file system. Data will be lost on next deployment.');
+      }
     }
   }
 
@@ -256,11 +284,6 @@ class DataStore {
     };
     this.saveData();
     return this.users[userIndex];
-  }
-
-  async getUserTourStatus(userId: string): Promise<boolean> {
-    const user = await this.findUserById(userId);
-    return user?.tourCompleted || false;
   }
 }
 
