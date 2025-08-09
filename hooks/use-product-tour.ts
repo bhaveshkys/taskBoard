@@ -68,8 +68,9 @@ export function useProductTour() {
         {
           element: '[data-tour="welcome"]',
           popover: {
-            title: 'Welcome to TaskBoards! 🎉',
-            description: 'Let\'s take a quick tour to help you get started with managing your tasks and boards effectively.',
+            title: 'Welcome to ekPlate! 🎉',
+            description: 'Let\'s take a quick tour to help you get started with managing your plates and tasks effectively.',
+
             side: 'bottom',
             align: 'start'
           }
@@ -77,8 +78,8 @@ export function useProductTour() {
         {
           element: '[data-tour="create-board"]',
           popover: {
-            title: 'Create Your First Board 📋',
-            description: 'Click this button to create a new board. You can create boards to organize your tasks by project, category, or any way that works for you.',
+            title: 'Create Your First plate 📋',
+            description: 'Click this button to create a new plate. You can create plates to organize your tasks by project, category, or any way that works for you.',
             side: 'bottom',
             align: 'start'
           }
@@ -86,8 +87,8 @@ export function useProductTour() {
         {
           element: '[data-tour="boards-list"]',
           popover: {
-            title: 'Your Boards Collection 📚',
-            description: 'All your boards will appear here. Click on any board to view and manage its tasks. You can also edit or delete boards from here.',
+            title: 'Your plate Collection 📚',
+            description: 'All your plates will appear here. Click on any plate to view and manage its tasks. You can also edit or delete plates from here.',
             side: 'top',
             align: 'start'
           }
@@ -104,7 +105,7 @@ export function useProductTour() {
         {
           popover: {
             title: 'You\'re All Set! 🚀',
-            description: 'That\'s it! You\'re ready to start organizing your tasks. Create your first board and begin your productivity journey. You can always restart this tour from the help menu.',
+            description: 'That\'s it! You\'re ready to start organizing your tasks. Create your first plate and begin your productivity journey.',
             side: 'bottom',
             align: 'center'
           }

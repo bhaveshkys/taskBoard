@@ -304,7 +304,7 @@ export default function BoardPage() {
             className="bg-ikea-yellow hover:bg-ikea-yellow/90 text-ikea-blue font-bold text-lg px-8 py-4 rounded-xl shadow-lg border-2 border-ikea-blue hover:scale-105 transition-all duration-200"
           >
             <Plus className="mr-3 h-6 w-6" />
-            Add Task
+            Add task
           </Button>
         </div>
 

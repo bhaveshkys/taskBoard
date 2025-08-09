@@ -74,15 +74,15 @@ export function CreateBoardDialog({ open, onOpenChange, onCreate }: CreateBoardD
     <Dialog open={open} onOpenChange={handleOpenChange}>
       <DialogContent className="sm:max-w-md bg-ikea-white border-4 border-ikea-yellow shadow-2xl" data-tour="create-board-modal">
         <DialogHeader className="text-center">
-          <DialogTitle className="text-2xl font-bold text-ikea-blue">Create New Board</DialogTitle>
+          <DialogTitle className="text-2xl font-bold text-ikea-blue">Create New Plate</DialogTitle>
           <DialogDescription className="text-ikea-blue/80 text-lg">
-            Give your board a name to get started organizing your tasks.
+            Give your plate a name to get started organizing your tasks.
           </DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit}>
           <div className="grid gap-6 py-6">
             <div className="space-y-3">
-              <Label htmlFor="title" className="text-ikea-blue font-semibold text-lg">Board Name</Label>
+              <Label htmlFor="title" className="text-ikea-blue font-semibold text-lg">Plate Name</Label>
               <Input
                 id="title"
                 value={title}

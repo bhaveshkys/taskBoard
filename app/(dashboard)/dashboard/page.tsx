@@ -232,7 +232,7 @@ export default function DashboardPage() {
               <div className="bg-ikea-blue p-2 rounded-lg">
                 <CheckSquare className="h-8 w-8 text-ikea-white" />
               </div>
-              <h1 className="text-3xl font-bold text-ikea-blue">TaskBoards</h1>
+              <h1 className="text-3xl font-bold text-ikea-blue">ekPlate</h1>
             </div>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
@@ -261,9 +261,9 @@ export default function DashboardPage() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="flex justify-between items-center mb-12">
           <div className="bg-ikea-white/90 backdrop-blur-sm p-6 rounded-xl shadow-lg border-2 border-ikea-yellow">
-            <h2 className="text-4xl font-bold text-ikea-blue mb-2">Your Boards</h2>
+            <h2 className="text-4xl font-bold text-ikea-blue mb-2">Your Plates</h2>
             <p className="text-ikea-blue/80 text-lg">
-              Organize your tasks and stay productive with IKEA style
+              Organize your tasks and stay productive
             </p>
           </div>
           <Button 
@@ -272,7 +272,7 @@ export default function DashboardPage() {
             className="bg-ikea-yellow hover:bg-ikea-yellow/90 text-ikea-blue font-bold text-lg px-8 py-4 rounded-xl shadow-lg border-2 border-ikea-blue hover:scale-105 transition-all duration-200"
           >
             <Plus className="mr-3 h-6 w-6" />
-            New Board
+            New Plate
           </Button>
         </div>
 
