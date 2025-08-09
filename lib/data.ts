@@ -115,6 +115,23 @@ class DataStore {
     return bcrypt.compare(password, hashedPassword);
   }
 
+  async getUserTourStatus(userId: string): Promise<boolean> {
+    const user = await this.findUserById(userId);
+    return user?.tourCompleted || false;
+  }
+
+  async updateUserTourStatus(userId: string, tourCompleted: boolean): Promise<User | null> {
+    const userIndex = this.users.findIndex(user => user.id === userId);
+    if (userIndex === -1) return null;
+
+    this.users[userIndex] = {
+      ...this.users[userIndex],
+      tourCompleted,
+    };
+    this.saveData();
+    return this.users[userIndex];
+  }
+
   // Board methods
   createBoard(userId: string, title: string): Board {
     const userBoards = this.getBoardsByUserId(userId);
@@ -271,19 +288,6 @@ class DataStore {
 
   private generateId(): string {
     return Math.random().toString(36).substr(2, 9);
-  }
-
-  // Add this method to the DataStore class
-  async updateUserTourStatus(userId: string, tourCompleted: boolean): Promise<User | null> {
-    const userIndex = this.users.findIndex(user => user.id === userId);
-    if (userIndex === -1) return null;
-
-    this.users[userIndex] = {
-      ...this.users[userIndex],
-      tourCompleted,
-    };
-    this.saveData();
-    return this.users[userIndex];
   }
 }
 
