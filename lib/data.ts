@@ -17,9 +17,10 @@ class DataStore {
   private tasks: Task[] = [];
 
   constructor() {
-    // Use /tmp directory in production (Vercel), local data directory in development
+    // Use a more appropriate path for VM deployment
     if (process.env.NODE_ENV === 'production') {
-      this.dataPath = '/tmp/database.json';
+      // On Azure VM, use a persistent directory
+      this.dataPath = path.join(process.cwd(), 'data', 'database.json');
     } else {
       this.dataPath = path.join(process.cwd(), 'data', 'database.json');
     }
