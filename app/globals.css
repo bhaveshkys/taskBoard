@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 51, 153; /* IKEA Blue */
+  --background-start-rgb: 255, 255, 255; /* White */
+  --background-end-rgb: 255, 204, 0; /* IKEA Yellow */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 51, 153; /* IKEA Blue */
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%; /* White */
+    --foreground: 220 100% 30%; /* IKEA Blue */
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 220 100% 30%; /* IKEA Blue */
+    --popover: 0 0% 100%; /* White */
+    --popover-foreground: 220 100% 30%; /* IKEA Blue */
+    --primary: 48 100% 50%; /* IKEA Yellow */
+    --primary-foreground: 220 100% 30%; /* IKEA Blue */
+    --secondary: 220 100% 30%; /* IKEA Blue */
+    --secondary-foreground: 0 0% 100%; /* White */
+    --muted: 48 100% 95%; /* Light Yellow */
+    --muted-foreground: 220 100% 30%; /* IKEA Blue */
+    --accent: 48 100% 50%; /* IKEA Yellow */
+    --accent-foreground: 220 100% 30%; /* IKEA Blue */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 100% 85%; /* Light Blue */
+    --input: 0 0% 100%; /* White */
+    --ring: 48 100% 50%; /* IKEA Yellow */
+    --chart-1: 48 100% 50%; /* IKEA Yellow */
+    --chart-2: 220 100% 30%; /* IKEA Blue */
+    --chart-3: 0 0% 100%; /* White */
+    --chart-4: 48 100% 40%; /* Darker Yellow */
+    --chart-5: 220 100% 20%; /* Darker Blue */
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 220 100% 15%; /* Dark Blue */
+    --foreground: 0 0% 98%; /* White */
+    --card: 220 100% 20%; /* Darker Blue */
+    --card-foreground: 0 0% 98%; /* White */
+    --popover: 220 100% 20%; /* Darker Blue */
+    --popover-foreground: 0 0% 98%; /* White */
+    --primary: 48 100% 50%; /* IKEA Yellow */
+    --primary-foreground: 220 100% 30%; /* IKEA Blue */
+    --secondary: 220 100% 25%; /* Medium Blue */
+    --secondary-foreground: 0 0% 98%; /* White */
+    --muted: 220 100% 25%; /* Medium Blue */
+    --muted-foreground: 0 0% 63.9%; /* Light Gray */
+    --accent: 48 100% 50%; /* IKEA Yellow */
+    --accent-foreground: 220 100% 30%; /* IKEA Blue */
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 100% 25%; /* Medium Blue */
+    --input: 220 100% 25%; /* Medium Blue */
+    --ring: 48 100% 50%; /* IKEA Yellow */
+    --chart-1: 48 100% 50%; /* IKEA Yellow */
+    --chart-2: 220 100% 40%; /* Medium Blue */
+    --chart-3: 0 0% 80%; /* Light Gray */
+    --chart-4: 48 100% 40%; /* Darker Yellow */
+    --chart-5: 220 100% 60%; /* Lighter Blue */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    background: linear-gradient(135deg, #ffffff 0%, #ffcc00 100%);
+  }
+}
