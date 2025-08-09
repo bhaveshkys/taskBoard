@@ -56,11 +56,11 @@ export default function RegisterPage() {
             <div className="bg-ikea-yellow p-3 rounded-xl">
               <CheckSquare className="h-10 w-10 text-ikea-blue" />
             </div>
-            <h1 className="text-3xl font-bold text-ikea-white">ekPlate</h1>
+            <h1 className="text-3xl font-bold text-ikea-white">TaskBoard</h1>
           </div>
-          <CardTitle className="text-2xl text-ikea-yellow font-bold">Join the Plates!</CardTitle>
+          <CardTitle className="text-2xl text-ikea-yellow font-bold">Join the Tasks!</CardTitle>
           <CardDescription className="text-ikea-white/90 text-lg">
-            Sign up to get started with Plate organization
+            Sign up to get started with Task organization
           </CardDescription>
         </CardHeader>
         <CardContent className="p-8">

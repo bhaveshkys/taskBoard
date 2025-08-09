@@ -55,11 +55,11 @@ export default function LoginPage() {
             <div className="bg-ikea-yellow p-3 rounded-xl">
               <CheckSquare className="h-10 w-10 text-ikea-blue" />
             </div>
-            <h1 className="text-3xl font-bold text-ikea-white">ekPlate</h1>
+            <h1 className="text-3xl font-bold text-ikea-white">TaskBoard</h1>
           </div>
-          <CardTitle className="text-2xl text-ikea-yellow font-bold">This app is named ekPlate coz look at the domain</CardTitle>
+          <CardTitle className="text-2xl text-ikea-yellow font-bold">This app is named TaskBoard coz look at the domain</CardTitle>
           <CardDescription className="text-ikea-white/90 text-lg">
-            Sign in to your account and  organize your plates
+            Sign in to your account and  organize your tasks
           </CardDescription>
         </CardHeader>
         <CardContent className="p-8">
